@@ -18,10 +18,8 @@ void sequence(){
         if (i<n){
             printf(", ");
         } else{
-            
             printf(".");
         }
-        
     }
 }
 
@@ -42,8 +40,46 @@ void fatorial(){
     printf("%d", total);
 }
 
+void c_to_f(){
+    int initial_temp, final_temp;
+    
+    printf("DIGITE A TEMPERATURA EM GRAUS CELSIUS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):");
+    scanf("%f", &initial_temp);
+    
+    final_temp = ((initial_temp * (9/5)) + 32) * 100;
+    final_temp = final_temp % 1;
+    final_temp = final_temp / 100;
+    printf("%f", final_temp);
+    
+    
+}
+
+void f_to_c(){
+    
+}
+
 void temperature_convertion(){
-    printf("ESChfgh\n");
+    printf("ESCOLHA O TIPO DE CONVERSÃO QUE SERÁ FEITA:\n");
+    printf("1) CELSIUS PARA FAHRENHEIT;\n");
+    printf("2) FAHRENHEIT PARA CELSIUS.\n");
+    
+    int choice;
+    int test_choice =  0;
+    
+    while(test_choice == 0){
+        scanf("%d", &choice);
+        if(choice == 1 || choice == 2){
+            test_choice = 1;
+            switch (choice){
+                case 1: c_to_f();
+                        break;
+                case 2: f_to_c();
+                        break;
+            }
+        }else{
+            printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n") ; 
+        }
+    }
 }
 
 void count_string(){
@@ -59,12 +95,12 @@ int main(){
     menu();
     
     while (test){
-        int choice = 0;
-        int true_choice = 0;
-        while(true_choice == 0){
+        int choice;
+        int test_choice = 0;
+        while(test_choice == 0){
            scanf("%d", &choice);
            if(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 ){
-                true_choice = 1;
+                test_choice = 1;
                 switch (choice){
                     case 1: sequence();
                             break;
@@ -79,12 +115,7 @@ int main(){
                 }
            }else{
                 printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n") ; 
-           }
-           
-        }
-        
-        
+           }  
+        }  
     }
-    
-  
 }

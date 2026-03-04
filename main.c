@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void menu(){
   printf("ESCOLHA UMA OPREÇÃO:\n");
@@ -41,21 +42,25 @@ void fatorial(){
 }
 
 void c_to_f(){
-    int initial_temp, final_temp;
+    float initial_temp, final_temp;
     
-    printf("DIGITE A TEMPERATURA EM GRAUS CELSIUS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):");
+    printf("DIGITE A TEMPERATURA EM GRAUS CELSIUS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):\n");
     scanf("%f", &initial_temp);
     
-    final_temp = ((initial_temp * (9/5)) + 32) * 100;
-    final_temp = final_temp % 1;
-    final_temp = final_temp / 100;
-    printf("%f", final_temp);
+    final_temp = (initial_temp * (9.0/5.0)) + 32;
+    printf("%.2f °C = %.2f °F", initial_temp, final_temp);
     
     
 }
 
 void f_to_c(){
+    float initial_temp, final_temp;
     
+    printf("DIGITE A TEMPERATURA EM GRAUS FAHRENHEITS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):\n");
+    scanf("%f", &initial_temp);
+    
+    final_temp = (initial_temp - 32) * (5.0/9.0);
+    printf("%.2f °F = %.2f °C", initial_temp, final_temp);
 }
 
 void temperature_convertion(){

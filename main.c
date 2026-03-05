@@ -88,11 +88,22 @@ void temperature_convertion(){
 }
 
 void count_string(){
-    printf("VAMENTE:\n");
+    char text[100];
+    int count = 0;
+    
+    printf("DIGITE O TEXTO QUE DESEJA CONTAR OS CARACTERES:\n");
+    scanf(" %99[^\n]", text);
+    while (text[count] != '\0'){
+        count = count + 1;
+    }
+    
+    printf("Esse texto tem %d caracteres (contando com os espaços).", count);
+    
 }
 
 void cousin_verification(){
-    printf(" INVÁLIDA\n");
+    int num;
+    printf("DIGITE UM INTEIRO PARA DESCOBRIR SE ELE É PRIMO:\n");
 }
 
 int main(){

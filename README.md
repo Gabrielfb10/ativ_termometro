@@ -18,7 +18,6 @@ Para rodar o programa é necessário ter:
 
 - Um compilador C instalado (ex: **GCC**)
 - Terminal ou prompt de comando
-- 
 ---
 
 ## Como compilar

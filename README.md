@@ -18,10 +18,7 @@ Para rodar o programa é necessário ter:
 
 - Um compilador C instalado (ex: **GCC**)
 - Terminal ou prompt de comando
-
-No Linux e Mac o GCC geralmente já está instalado.  
-No Windows pode ser usado **MinGW** ou **WSL**.
-
+- 
 ---
 
 ## Como compilar

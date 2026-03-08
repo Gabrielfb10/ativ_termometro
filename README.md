@@ -29,4 +29,8 @@ No Windows pode ser usado **MinGW** ou **WSL**.
 No terminal, navegue até a pasta onde está o arquivo `.c` e execute:
 
 ```bash
-gcc programa.c -o programa
+gcc programa.c -o calc
+
+## Como executar
+
+

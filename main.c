@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 void menu(){
   printf("ESCOLHA UMA OPREÇÃO:\n");
@@ -19,7 +18,7 @@ void sequence(){
         if (i<n){
             printf(", ");
         } else{
-            printf(".");
+            printf(".\n");
         }
     }
 }
@@ -38,7 +37,7 @@ void fatorial(){
         }
         total = total * i;
     }
-    printf("%d", total);
+    printf("%d\n", total);
 }
 
 void c_to_f(){
@@ -48,7 +47,7 @@ void c_to_f(){
     scanf("%f", &initial_temp);
     
     final_temp = (initial_temp * (9.0/5.0)) + 32;
-    printf("%.2f °C = %.2f °F", initial_temp, final_temp);
+    printf("%.2f °C = %.2f °F\n", initial_temp, final_temp);
     
     
 }
@@ -60,10 +59,10 @@ void f_to_c(){
     scanf("%f", &initial_temp);
     
     final_temp = (initial_temp - 32) * (5.0/9.0);
-    printf("%.2f °F = %.2f °C", initial_temp, final_temp);
+    printf("%.2f °F = %.2f °C\n", initial_temp, final_temp);
 }
 
-void temperature_convertion(){
+void temperature_conversion(){
     printf("ESCOLHA O TIPO DE CONVERSÃO QUE SERÁ FEITA:\n");
     printf("1) CELSIUS PARA FAHRENHEIT;\n");
     printf("2) FAHRENHEIT PARA CELSIUS.\n");
@@ -97,22 +96,49 @@ void count_string(){
         count = count + 1;
     }
     
-    printf("Esse texto tem %d caracteres (contando com os espaços).", count);
+    printf("Esse texto tem %d caracteres (contando com os espaços).\n", count);
     
 }
 
 void cousin_verification(){
-    int num;
-    printf("DIGITE UM INTEIRO PARA DESCOBRIR SE ELE É PRIMO:\n");
+    int i;
+    int is_cousin = 1;
+    int num = 0;
+    printf("DIGITE UM INTEIRO POSITIVO PARA DESCOBRIR SE ELE É PRIMO:\n");
+    while (num<=0){
+        scanf("%d", &num);
+        if(num>0){
+            break;
+        }else{
+            printf("ENTRADA INVÁLIDA! DIGITE UM INTEIRO MAIOR QUE ZERO:\n");
+        }
+    }  
+
+    
+    for(i=2;i * i <= num;i++){
+        if(num % i == 0){
+            is_cousin = 0;
+            break;
+        }
+    }
+    if (num == 1){
+        printf("O número %d não é primo.\n", num);
+    }else if (is_cousin == 1){
+        printf("O número %d é primo.\n", num);
+    }else{
+        printf("O número %d não é primo.\n", num);
+    }
+    
 }
 
 int main(){
     int test = 1;
-    menu();
+    
     
     while (test){
         int choice;
         int test_choice = 0;
+        menu();
         while(test_choice == 0){
            scanf("%d", &choice);
            if(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 ){
@@ -122,7 +148,7 @@ int main(){
                             break;
                     case 2: fatorial();
                             break;
-                    case 3: temperature_convertion();
+                    case 3: temperature_conversion();
                             break;
                     case 4: count_string();
                             break;
@@ -130,8 +156,22 @@ int main(){
                             break;
                 }
            }else{
-                printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n") ; 
+                printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n"); 
            }  
-        }  
+        }
+        
+        while(test){
+            printf("DESEJA REALIZAR OUTRA OPERAÇÃO?\n");
+            printf("1) SIM;\n");
+            printf("2) NÃO.\n"); 
+            scanf("%d", &test);
+            if(test==1){
+                break;
+            }else if(test==2){
+                test = 0;
+                break;
+            }
+            printf("DIGITE UMA OPÇÃO VÁLIDA:\n");
+        }
     }
 }

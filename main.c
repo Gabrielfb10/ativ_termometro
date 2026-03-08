@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 void menu(){
-  printf("ESCOLHA UMA OPREÇÃO:\n");
-  printf("1) IMPRIMIR NÚMEROS DE 1 ATÉ N;\n");
+  printf("ESCOLHA UMA OPRECAO:\n");
+  printf("1) IMPRIMIR NUMEROS DE 1 ATE N;\n");
   printf("2) CALCULAR FATORIAL DE N;\n");
-  printf("3) CONVERSÃO DE TEMPERATURA;\n");
+  printf("3) CONVERSAO DE TEMPERATURA;\n");
   printf("4) CONTAR CARACTERES DE UMA STRING;\n");
-  printf("5) VERIFICAR SE N É PRIMO.\n");
+  printf("5) VERIFICAR SE N EH PRIMO.\n");
 }
 
 void sequence(){
     int n, i;
-    printf("DIGITE ATÉ QUE NÚMERO INTEIRO A SEUQUÊNCIA DEVE IR:\n");
+    printf("DIGITE ATE QUE NUMERO INTEIRO A SEUQUENCIA DEVE IR:\n");
     scanf("%d", &n);
     for(i=1;i<=n;i++){
         printf("%d", i);
@@ -26,7 +26,7 @@ void sequence(){
 void fatorial(){
     int n, i;
     int total = 1;
-    printf("DIGITE QUAL NÚMERO INTEIRO DESEJA CALCULAR O FATORIAL:\n");
+    printf("DIGITE QUAL NUMERO INTEIRO DESEJA CALCULAR O FATORIAL:\n");
     scanf("%d", &n);
     for(i=1;i<=n;i++){
         printf("%d", i);
@@ -43,7 +43,7 @@ void fatorial(){
 void c_to_f(){
     float initial_temp, final_temp;
     
-    printf("DIGITE A TEMPERATURA EM GRAUS CELSIUS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):\n");
+    printf("DIGITE A TEMPERATURA EM GRAUS CELSIUS QUE SERA CONVERTIDA (APENAS NUMEROS):\n");
     scanf("%f", &initial_temp);
     
     final_temp = (initial_temp * (9.0/5.0)) + 32;
@@ -55,7 +55,7 @@ void c_to_f(){
 void f_to_c(){
     float initial_temp, final_temp;
     
-    printf("DIGITE A TEMPERATURA EM GRAUS FAHRENHEITS QUE SERÁ CONVERTIDA (APENAS NÚMEROS):\n");
+    printf("DIGITE A TEMPERATURA EM GRAUS FAHRENHEITS QUE SERA CONVERTIDA (APENAS NUMEROS):\n");
     scanf("%f", &initial_temp);
     
     final_temp = (initial_temp - 32) * (5.0/9.0);
@@ -63,7 +63,7 @@ void f_to_c(){
 }
 
 void temperature_conversion(){
-    printf("ESCOLHA O TIPO DE CONVERSÃO QUE SERÁ FEITA:\n");
+    printf("ESCOLHA O TIPO DE CONVERSAO QUE SERA FEITA:\n");
     printf("1) CELSIUS PARA FAHRENHEIT;\n");
     printf("2) FAHRENHEIT PARA CELSIUS.\n");
     
@@ -81,7 +81,7 @@ void temperature_conversion(){
                         break;
             }
         }else{
-            printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n") ; 
+            printf("ESCOLHA INVALIDA, TENTE NOVAMENTE:\n") ; 
         }
     }
 }
@@ -104,13 +104,13 @@ void cousin_verification(){
     int i;
     int is_cousin = 1;
     int num = 0;
-    printf("DIGITE UM INTEIRO POSITIVO PARA DESCOBRIR SE ELE É PRIMO:\n");
+    printf("DIGITE UM INTEIRO POSITIVO PARA DESCOBRIR SE ELE EH PRIMO:\n");
     while (num<=0){
         scanf("%d", &num);
         if(num>0){
             break;
         }else{
-            printf("ENTRADA INVÁLIDA! DIGITE UM INTEIRO MAIOR QUE ZERO:\n");
+            printf("ENTRADA INVALIDA! DIGITE UM INTEIRO MAIOR QUE ZERO:\n");
         }
     }  
 
@@ -122,11 +122,11 @@ void cousin_verification(){
         }
     }
     if (num == 1){
-        printf("O número %d não é primo.\n", num);
+        printf("O numero %d nao eh primo.\n", num);
     }else if (is_cousin == 1){
-        printf("O número %d é primo.\n", num);
+        printf("O numero %d eh primo.\n", num);
     }else{
-        printf("O número %d não é primo.\n", num);
+        printf("O numero %d nao eh primo.\n", num);
     }
     
 }
@@ -156,14 +156,14 @@ int main(){
                             break;
                 }
            }else{
-                printf("ESCOLHA INVÁLIDA, TENTE NOVAMENTE:\n"); 
+                printf("ESCOLHA INVALIDA, TENTE NOVAMENTE:\n"); 
            }  
         }
         
         while(test){
-            printf("DESEJA REALIZAR OUTRA OPERAÇÃO?\n");
+            printf("DESEJA REALIZAR OUTRA OPERACAO?\n");
             printf("1) SIM;\n");
-            printf("2) NÃO.\n"); 
+            printf("2) NAO.\n"); 
             scanf("%d", &test);
             if(test==1){
                 break;
@@ -171,7 +171,7 @@ int main(){
                 test = 0;
                 break;
             }
-            printf("DIGITE UMA OPÇÃO VÁLIDA:\n");
+            printf("DIGITE UMA ALTERNATIVA VALIDA:\n");
         }
     }
 }

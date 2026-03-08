@@ -25,7 +25,7 @@ Para rodar o programa é necessário ter:
 No terminal, navegue até a pasta onde está o arquivo `.c` e execute:
 
 ```bash
-gcc programa.c -o calc
+gcc main.c -o calc
 
 ./calc
 ```
